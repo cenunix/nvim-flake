@@ -1,5 +1,5 @@
 require('nvim-navic').setup {
-  -- icons = require('lua.user.icons'),
+  icons = require('icons'),
   lsp = {
     auto_attach = true,
     preference = nil,

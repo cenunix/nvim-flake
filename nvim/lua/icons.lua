@@ -1,4 +1,4 @@
-icons = {
+return {
   kind = {
     Array = ' ',
     Boolean = ' ',
