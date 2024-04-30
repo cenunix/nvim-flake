@@ -27,7 +27,17 @@ let
   #   optional = <true|false>; # Default: false
   #   ...
   # }
-  all-plugins = with pkgs.vimPlugins; [
+  all-plugins = let
+    resession-nvim = pkgs.vimUtils.buildVimPlugin {
+      name = "resession-nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "stevearc";
+        repo = "resession.nvim";
+        rev = "4463a78e1783c99466d5f5fb79516d06a5d6f3f8";
+        sha256 = "sha256-+6W6pRLEnKWOTvpu+UZBgNEPvTfFBfOWOs7lHUM0Wnw=";
+      };
+    };
+  in with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
     # https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=vimPlugins
     nvim-autopairs
@@ -53,6 +63,8 @@ let
     gitsigns-nvim
     noice-nvim
     nui-nvim
+    resession-nvim
+    alpha-nvim
     catppuccin-nvim
     (nvim-treesitter.withPlugins
       (p: [ p.c p.cpp p.nix p.lua p.go p.python p.qmljs p.qmldir ]))
