@@ -1,21 +1,22 @@
+icons = require('icons')
 require('noice').setup {
   messages = {
     -- NOTE: If you enable messages, then the cmdline is enabled automatically.
     -- This is a current Neovim limitation.
-    enabled = true,              -- enables the Noice messages UI
-    view = 'notify',             -- default view for messages
-    view_error = 'notify',       -- view for errors
-    view_warn = 'notify',        -- view for warnings
-    view_history = 'messages',   -- view for :messages
+    enabled = true, -- enables the Noice messages UI
+    view = 'notify', -- default view for messages
+    view_error = 'notify', -- view for errors
+    view_warn = 'notify', -- view for warnings
+    view_history = 'messages', -- view for :messages
     view_search = 'virtualtext', -- view for search count messages. Set to `false` to disable
   },
   popupmenu = {
-    enabled = true,  -- enables the Noice popupmenu UI
+    enabled = true, -- enables the Noice popupmenu UI
     ---@type 'nui'|'cmp'
     backend = 'nui', -- backend to use to show regular cmdline completions
     ---@type NoicePopupmenuItemKind|false
     -- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
-    kind_icons = {}, -- set to `false` to disable icons
+    kind_icons = icons.kind, -- set to `false` to disable icons
   },
   ---@type NoiceRouteConfig
   redirect = {
@@ -49,8 +50,8 @@ require('noice').setup {
       format = 'lsp_progress',
       --- @type NoiceFormat|string
       format_done = 'lsp_progress_done',
-      throttle = 1000 / 30, -- frequency to update lsp progress message
-      view = 'notify',
+      throttle = 1000 / 10, -- frequency to update lsp progress message
+      view = 'mini',
     },
     override = {
       -- override the default lsp markdown formatter with Noice
@@ -63,9 +64,9 @@ require('noice').setup {
     hover = {
       enabled = true,
       silent = false, -- set to true to not show a message if hover is not available
-      view = nil,     -- when nil, use defaults from documentation
+      view = nil, -- when nil, use defaults from documentation
       ---@type NoiceViewOptions
-      opts = {},      -- merged with defaults from documentation
+      opts = {}, -- merged with defaults from documentation
     },
     signature = {
       enabled = true,
@@ -73,11 +74,11 @@ require('noice').setup {
         enabled = true,
         trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
         luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
-        throttle = 50,  -- Debounce lsp signature help request by 50ms
+        throttle = 50, -- Debounce lsp signature help request by 50ms
       },
-      view = nil,       -- when nil, use defaults from documentation
+      view = nil, -- when nil, use defaults from documentation
       ---@type NoiceViewOptions
-      opts = {},        -- merged with defaults from documentation
+      opts = {}, -- merged with defaults from documentation
     },
     message = {
       -- Messages shown by lsp servers
@@ -97,19 +98,33 @@ require('noice').setup {
         win_options = { concealcursor = 'n', conceallevel = 3 },
       },
     },
-  },                              -- you can enable a preset for easier configuration
+  }, -- you can enable a preset for easier configuration
   presets = {
-    bottom_search = true,         -- use a classic bottom cmdline for search
-    command_palette = true,       -- position the cmdline and popupmenu together
+    bottom_search = true, -- use a classic bottom cmdline for search
+    command_palette = true, -- position the cmdline and popupmenu together
     long_message_to_split = true, -- long messages will be sent to a split
-    inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-    lsp_doc_border = true,        -- add a border to hover docs and signature help
+    inc_rename = false, -- enables an input dialog for inc-rename.nvim
+    lsp_doc_border = true, -- add a border to hover docs and signature help
   },
-  throttle = 1000 / 30,           -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
+  throttle = 1000 / 30, -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
   ---@type NoiceConfigViews
-  views = {}, ---@see section on views
-  ---@type NoiceRouteConfig[]
-  routes = {}, --- @see section on routes
+  views = {
+    mini = {
+      win_options = {
+        winblend = 0,
+      },
+    },
+  }, ---@see section on views
+  routes = {
+    {
+      filter = {
+        event = 'msg_show',
+        kind = '',
+        find = 'written',
+      },
+      opts = { skip = true },
+    },
+  }, --- @see section on routes
   ---@type table<string, NoiceFilter>
   status = {}, --- @see section on statusline components
   ---@type NoiceFormatOptions

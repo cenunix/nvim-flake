@@ -44,8 +44,9 @@ let
     nvim-lspconfig
     vim-qml
     nvim-cmp
-    colorizer
+    nvim-colorizer-lua
     luasnip
+    lspkind-nvim
     bufferline-nvim
     copilot-vim
     cmp_luasnip
@@ -68,8 +69,21 @@ let
     resession-nvim
     alpha-nvim
     catppuccin-nvim
-    (nvim-treesitter.withPlugins
-      (p: [ p.c p.cpp p.nix p.lua p.go p.python p.qmljs p.qmldir p.vimdoc ]))
+    (nvim-treesitter.withPlugins (p: [
+      p.c
+      p.cpp
+      p.nix
+      p.lua
+      p.go
+      p.python
+      p.qmljs
+      p.qmldir
+      p.vimdoc
+      p.markdown
+      p.markdown_inline
+      p.regex
+      p.bash
+    ]))
   ];
 
   extraPackages = with pkgs; [
