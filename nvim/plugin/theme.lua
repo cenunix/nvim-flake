@@ -34,6 +34,7 @@ require('catppuccin').setup {
     Pmenu = { bg = '#07070b' },
   },
   integrations = {
+    alpha = true,
     cmp = true,
     gitsigns = true,
     neotree = true,
