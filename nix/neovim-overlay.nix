@@ -44,6 +44,7 @@ let
     nvim-lspconfig
     vim-qml
     nvim-cmp
+    colorizer
     luasnip
     bufferline-nvim
     copilot-vim
@@ -61,8 +62,9 @@ let
     telescope-nvim
     toggleterm-nvim
     gitsigns-nvim
-    noice-nvim
+    nvim-notify
     nui-nvim
+    noice-nvim
     resession-nvim
     alpha-nvim
     catppuccin-nvim

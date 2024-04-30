@@ -32,11 +32,6 @@ require('catppuccin').setup {
     },
   },
   custom_highlights = {
-    -- BufferLineIndicatorSelected = { fg = cp.text },
-    -- BufferLineModifiedSelected = { fg = cp.teal },
-    -- BufferLineVisible = { fg = cp.text, bg = nil },
-    -- BufferLineIndicatorVisible = { bg = cp.mantle },
-    -- BufferLineBackcrust = { fg = cp.surface1, bg = nil },
     -- Comment = { fg = colors.flamingo },
     -- TabLineSel = { bg = colors.pink },
     -- CmpBorder = { fg = "#07070b" },
