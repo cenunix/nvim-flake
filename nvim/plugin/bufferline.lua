@@ -5,7 +5,7 @@ require('bufferline').setup {
   options = {
     indicator = {
       -- icon = '▎',
-      style = 'underline', -- 'icon' | 'underline' | 'none'
+      style = 'none', -- 'icon' | 'underline' | 'none'
     },
     offsets = {
       {

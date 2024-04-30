@@ -73,7 +73,7 @@ hl('NormalFloat', { bg = nil })
 hl('FloatBorder', { bg = nil, fg = '#313244' })
 hl('FloatTitle', { bg = nil })
 -- hl('LineNr', { fg = '#45475a' })
--- hl('CursorLine', { bg = '#313244', bold = true })
+hl('CursorLine', { bg = nil, bold = false })
 -- hl('CursorLineNr', { fg = 'White', bg = nil })
 hl('WinSeparator', { fg = '#313244', bg = nil, bold = true })
 
