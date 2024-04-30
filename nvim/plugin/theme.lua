@@ -1,17 +1,17 @@
 local hl = function(name, opts)
   vim.api.nvim_set_hl(0, name, opts)
 end
-
+local cp = require('catppuccin.palettes').get_palette()
 require('catppuccin').setup {
   flavour = 'mocha', -- latte, frappe, macchiato, mocha
-  background = { -- :h background
+  background = {     -- :h background
     light = 'latte',
     dark = 'mocha',
   },
   transparent_background = true, -- disables setting the background color.
   term_colors = true,
-  styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-    comments = { 'italic' }, -- Change the style of comments
+  styles = {                     -- Handles the styles of general hi groups (see `:h highlight-args`):
+    comments = { 'italic' },     -- Change the style of comments
     conditionals = { 'italic' },
     loops = {},
     functions = {},
@@ -32,6 +32,11 @@ require('catppuccin').setup {
     },
   },
   custom_highlights = {
+    -- BufferLineIndicatorSelected = { fg = cp.text },
+    -- BufferLineModifiedSelected = { fg = cp.teal },
+    -- BufferLineVisible = { fg = cp.text, bg = nil },
+    -- BufferLineIndicatorVisible = { bg = cp.mantle },
+    -- BufferLineBackcrust = { fg = cp.surface1, bg = nil },
     -- Comment = { fg = colors.flamingo },
     -- TabLineSel = { bg = colors.pink },
     -- CmpBorder = { fg = "#07070b" },
@@ -64,12 +69,12 @@ vim.cmd.colorscheme('catppuccin')
 -- Custom Highlight Group
 hl('Normal', { bg = nil })
 hl('NormalNC', { link = 'Normal' })
-hl('NormalFloat', { bg = '#313244' })
-hl('FloatBorder', { bg = '#313244', fg = '#313244' })
+hl('NormalFloat', { bg = nil })
+hl('FloatBorder', { bg = nil, fg = '#313244' })
 hl('FloatTitle', { bg = nil })
-hl('LineNr', { fg = '#45475a' })
-hl('CursorLine', { bg = '#313244', bold = true })
-hl('CursorLineNr', { fg = 'White', bg = nil })
+-- hl('LineNr', { fg = '#45475a' })
+-- hl('CursorLine', { bg = '#313244', bold = true })
+-- hl('CursorLineNr', { fg = 'White', bg = nil })
 hl('WinSeparator', { fg = '#313244', bg = nil, bold = true })
 
 hl('GitSignsAdd', { fg = '#a6e3a1' })
@@ -88,23 +93,23 @@ hl('DiffText', { bg = '#3C2E10', bold = true })
 hl('LazyNormal', { bg = '#181825' })
 
 -- Telescope Theme
-hl('TelescopeNormal', { bg = '#181825' })
-hl('TelescopePreviewNormal', { bg = '#181825' })
-hl('TelescopeResultsNormal', { bg = '#181825' })
+hl('TelescopeNormal', { bg = nil })
+hl('TelescopePreviewNormal', { bg = nil })
+hl('TelescopeResultsNormal', { bg = nil })
 hl('TelescopeBorder', { bg = '#181825' })
-hl('TelescopePreviewBorder', { fg = '#181825', bg = '#181825' })
-hl('TelescopePromptBorder', { fg = '#313244', bg = '#313244' })
-hl('TelescopeResultsBorder', { fg = '#181825', bg = '#181825' })
+hl('TelescopePreviewBorder', { fg = '#181825', bg = nil })
+hl('TelescopePromptBorder', { fg = '#181825', bg = nil })
+hl('TelescopeResultsBorder', { fg = '#181825', bg = nil })
 hl('TelescopeTitle', { fg = '#181825', bg = '#89b4fa' })
 hl('TelescopePreviewTitle', { fg = '#181825', bg = '#89b4fa' })
-hl('TelescopePromptNormal', { bg = '#313244' })
+hl('TelescopePromptNormal', { bg = nil })
 hl('TelescopePromptTitle', { fg = '#181825', bg = '#89b4fa' })
-hl('TelescopePromptCounter', { fg = '#89b4fa', bg = '#313244' })
-hl('TelescopePromptPrefix', { fg = '#89b4fa', bg = '#313244' })
+hl('TelescopePromptCounter', { fg = '#89b4fa', bg = nil })
+hl('TelescopePromptPrefix', { fg = '#89b4fa', bg = nil })
 
 -- Neotree
-hl('NeoTreeFloatBorder', { fg = 'White', bg = '#181825' })
-hl('NeoTreeFloatTitle', { fg = 'White', bg = '#181825' })
+hl('NeoTreeFloatBorder', { fg = '#cdd6f4', bg = nil })
+hl('NeoTreeFloatTitle', { fg = '#cdd6f4', bg = nil })
 -- hl("NeoTreeNormal", {bg = "#181825"})
 
 -- git-messenger

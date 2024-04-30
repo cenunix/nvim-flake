@@ -67,7 +67,7 @@ let
     alpha-nvim
     catppuccin-nvim
     (nvim-treesitter.withPlugins
-      (p: [ p.c p.cpp p.nix p.lua p.go p.python p.qmljs p.qmldir ]))
+      (p: [ p.c p.cpp p.nix p.lua p.go p.python p.qmljs p.qmldir p.vimdoc ]))
   ];
 
   extraPackages = with pkgs; [
