@@ -91,6 +91,7 @@ let
     black
     isort
     go
+    fortune
   ];
 in {
   # This is the neovim derivation
