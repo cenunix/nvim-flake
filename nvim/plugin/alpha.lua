@@ -1,5 +1,5 @@
 local alpha = require('alpha')
-local icons = require('icons')
+local icons = require('lua.lua.user.icons')
 local dashboard = require('alpha.themes.dashboard')
 dashboard.section.header.val = {
   [[                                                                     ]],
