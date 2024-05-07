@@ -4,14 +4,14 @@ end
 local cp = require('catppuccin.palettes').get_palette()
 require('catppuccin').setup {
   flavour = 'mocha', -- latte, frappe, macchiato, mocha
-  background = {     -- :h background
+  background = { -- :h background
     light = 'latte',
     dark = 'mocha',
   },
   transparent_background = true, -- disables setting the background color.
   term_colors = true,
-  styles = {                     -- Handles the styles of general hi groups (see `:h highlight-args`):
-    comments = { 'italic' },     -- Change the style of comments
+  styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+    comments = { 'italic' }, -- Change the style of comments
     conditionals = { 'italic' },
     loops = {},
     functions = {},
@@ -26,16 +26,39 @@ require('catppuccin').setup {
   },
   color_overrides = {
     mocha = {
-      base = '#07070b',
-      mantle = '#07070b',
-      crust = '#07070b',
+      rosewater = '#fae4fc',
+      flamingo = '#fae4fc',
+      pink = '#fae4fc',
+      mauve = '#fcc5e9',
+      red = '#d0679d',
+      maroon = '#d0679d',
+      peach = '#fffac2',
+      yellow = '#fffac2',
+      green = '#5de4c7',
+      teal = '#94e2d5',
+      sky = '#add7ff',
+      sapphire = '#89ddff',
+      blue = '#89ddff',
+      lavender = '#b4befe',
+      text = '#a6accd',
+      subtext1 = '#bac2de',
+      subtext0 = '#a6adc8',
+      overlay2 = '#9399b2',
+      overlay1 = '#7f849c',
+      overlay0 = '#6c7086',
+      surface2 = '#585b70',
+      surface1 = '#45475a',
+      surface0 = '#313244',
+      base = '#14151e',
+      mantle = '#14151e',
+      crust = '#14151e',
     },
   },
   custom_highlights = {
     -- Comment = { fg = colors.flamingo },
     -- TabLineSel = { bg = colors.pink },
     -- CmpBorder = { fg = "#07070b" },
-    Pmenu = { bg = '#07070b' },
+    Pmenu = { bg = '#14151e' },
   },
   integrations = {
     alpha = true,
