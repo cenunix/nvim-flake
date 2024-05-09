@@ -1,4 +1,7 @@
 icons = require('icons')
+require('notify').setup ({
+  background_colour = "#000000",
+})
 require('noice').setup {
   messages = {
     -- NOTE: If you enable messages, then the cmdline is enabled automatically.
