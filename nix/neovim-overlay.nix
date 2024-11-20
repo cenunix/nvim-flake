@@ -102,7 +102,7 @@ let
     eslint_d
     nixpkgs-fmt
     nixfmt
-    nodePackages.pyright
+    pyright
     qt6.qtdeclarative
     black
     isort
