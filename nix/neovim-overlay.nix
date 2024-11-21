@@ -48,7 +48,7 @@ let
     luasnip
     lspkind-nvim
     bufferline-nvim
-    copilot-vim
+    # copilot-vim
     cmp_luasnip
     friendly-snippets
     cmp-nvim-lsp
