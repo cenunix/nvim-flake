@@ -16,7 +16,7 @@ require('lint').linters_by_ft = {
   markdown = { 'vale' },
   nix = { 'deadnix' },
   javascript = { 'eslint_d' },
-  tsx = { 'eslint_d' },
+  typescript = { 'eslint_d' },
 }
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
