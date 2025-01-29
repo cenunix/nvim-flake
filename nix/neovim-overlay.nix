@@ -52,7 +52,8 @@ let
     cmp_luasnip
     friendly-snippets
     cmp-nvim-lsp
-    null-ls-nvim
+    nvim-lint
+    conform-nvim
     neo-tree-nvim
     nvim-web-devicons
     lualine-nvim
